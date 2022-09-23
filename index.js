@@ -68,7 +68,7 @@ app.listen(port, async () => {
     values.push([prices]);
 
     const resource = {
-      sendingValues
+      values
     }
 
     var cellNo = index+2 ;
