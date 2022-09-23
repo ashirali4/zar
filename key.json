@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "liquidations",
+  "private_key_id": "c483a0ab3880546f8e71abaf3850d63d8085f1dd",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQC6ueXDyD+mJygY\nfdTI3O11heJsachHiw1G1a8/2Y2B7i4zemIif1qBMuMuYzddtQa0Olg5HptOYTm7\nWvgKpn2NOYM8fROLoDDmyf8a/wSauTJxpwBhKu3VC/Wci3W/fE/OJ/I1raen1Beu\nhVlvXBk3Kabo/9BbAVYEDb6sNU/Lv7dKa4cQL6eAghvhgvJIPk1/NDAkJUdbEfpF\nI0EofjhXTFJeK8kCmynFSKQDXEVXMVfFdRh3xu3YO1bJ7eXwLjcWL5qpT3kwXPvp\n6wPvzQcNwc2emgTFHvV5xwK+TAc3gxKaaSveva9GoFyLlRYl3K+UJenb72G87ifb\n5bFGovWpAgMBAAECggEARW8vI1hpYq2Y2VKhN3f/zP3WLp4/XWs1qqt3GXUai8A3\n6eiOaWmWDAkSNYOraOsR7R7tA4CAG+tHfoXbSoqSkVtbk7im9frBdHCUrkM6QRaw\nzVZea8N84QYrdOTfCi99tZlhFdjXSS8zBzCLCz/iGIMij+3gWpbql2NNDdhdLdQf\nSyL5UqVF+Dqa0JhTQ/SbHM7Uv/XORozv9BrYJNc6zdIleREGg+WNjrI/MX1AkwqV\nV/+3A5/ea+TLA3+Ah0FeuZ9tiTdvwBLiEzuz2x4TP7Uzx0c+qD/Z/Vff/qn71oXu\nRXxPcFVgKuE8JX1naRUKhy27dniV3UuNRAS15Ux/aQKBgQDwehHB5THU90F5kRKK\nvPR1P65ZP6DkkGx9K1+89M5eq9GOfsCy0GBFE1v4J9nFSu9cr4lDJ1MY8cSvSp2X\nsbY7yEDplgzNXh3CkI8wcEWuRADLXEbYLGU0YOwA6kEDxA24+0LZF/RlrEkRqDEo\nVTgtFgl9Tv4kgLyzTfmTeS4pZwKBgQDGx5ZAZGzPDcYjV3G6wnCIax40WvZm0lgb\nCeSqrGnp4MqhIaKDlSmr3KOEgnIyOdCm36nqf6wi7ooUF5BM1BP0t9F/VtEKvz9u\nu5nlyeyA4Fr4rHmPItt4z+Qh10y5yV5QvaY4Fndt8lBT32c9Lv3DDWSFjLXycVpq\n9SRWrM2ubwKBgAFgQW/Blvpn+8jtSpTepetx1NaP5aTJKsXAlMipAfFKvGU7VnDv\nfk2G4dTWrYlSd3IpUvi+ZdxTrdNu8t3mV2uaJrzvbd1S94qgdyFI0y0/GF4RhhpA\njsew8kjDDmIuIgH39hb16yEVzkk6lCVt72dao+1CoXOmBO5luNLeM6RrAoGBAImf\nmZlPbj4UbT/+xNDm2f65Gxpod/xMWY+u09COum2gounYXan4VfeVNOkDX4kCmkFO\nzVd7uXQd7x9mCRQIKSDfO36MXwKv0n0aCb0chk/cBV/yGd9N5OHKHUqIw6hFkLUZ\n+MEQXPOUNqU7IUEtDahD13rXJwmKDW3L97LCxUylAoGBANDC2gifhhJKGCOj+lVV\nzgwHjU5adlEWJriIfcf2SGKPi3McedcRSeT7jQ4/odBt6YctL23V4TI1eSnyWoIw\n0bzhIR02iR/24oPuplTGdjftBBmz2xnWcXNVF69Hb9z8yl0hdCOd8Qtb2/57suHE\nOEAX4XnYghPEdC7e4r7CQtse\n-----END PRIVATE KEY-----\n",
+  "client_email": "ashiralikk@liquidations.iam.gserviceaccount.com",
+  "client_id": "100496385281549430405",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/ashiralikk%40liquidations.iam.gserviceaccount.com"
+}
