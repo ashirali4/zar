@@ -53,11 +53,23 @@ app.listen(port, async () => {
     range: "Worksheet!B2:B",
   })
 
+  
+  let myList = readData['data']['values'];
 
-
+  for(let a=0;a<myList.length;a++){
+    await myFunction(myList[a],a);
+  }
  
-  readData['data']['values'].forEach(myFunction);
+//   for(let a=0;a<myList.length;a=a+3){
+//     myFunction(myList[a],a);
+//     myFunction(myList[a+1],a+1);
+//    await myFunction(myList[a+2],a+2);
+//  }
+
+
+
   async function myFunction(value,index) {
+  
     var prices = await callforPrice('https://www.amazon.com/dp/' + value.toString());
     console.log(prices);
     let values = [
