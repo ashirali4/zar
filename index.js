@@ -1,25 +1,6 @@
 const puppeteer = require("puppeteer"); // ^14.3.0
 
-
-
 let browser;
-
-
-async function callforPrice(url) {
-  console.log("Calling Price For -- > " + url);
-  browser = await puppeteer.launch({ headless: false,
-    executablePath: '/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome',
-    userDataDir: 'Users/macbookpro/Library/Application Support/Google/Chrome/Ashir',
-  });
-  const [page] = await browser.pages();
-  await page.goto(url, { waitUntil: "domcontentloaded" });
-  const el = await page.$("#twister-plus-price-data-price");
-  const price = await el.evaluate(el => el.getAttribute("value"));
-  console.log("Price Found -- > " + price);
-  return price;
-}
-
-
 
 const express = require("express");
 
@@ -44,8 +25,9 @@ const auth = new google.auth.GoogleAuth({
 
 const spreadsheetId = "1YkNRbclpT9H4DSfZHEHiJkMoSrAsAgpT9XBTFfgq9k8";
 
-
 const port = 3000;
+
+
 app.listen(port, async () => {
   console.log(`server started on ${port}`)
   const authClientObject = await auth.getClient();
@@ -56,39 +38,35 @@ app.listen(port, async () => {
     range: "asd!B2:B",
   })
 
-  
+
   let myList = readData['data']['values'];
 
-  for(let a=0;a<myList.length;a++){
-    await myFunction(myList[a],a);
+  for (let a = 0; a < myList.length; a++) {
+    await myFunction(myList[a], a);
   }
- 
-//   for(let a=0;a<myList.length;a=a+3){
-//     myFunction(myList[a],a);
-//     myFunction(myList[a+1],a+1);
-//    await myFunction(myList[a+2],a+2);
-//  }
 
 
 
-  async function myFunction(value,index) {
-  
+
+
+  async function myFunction(value, index) {
+
     var prices = await callforPrice('https://www.amazon.de/dp/' + value.toString());
     console.log(prices);
     let values = [
 
 
     ];
-  
+
     values.push([prices]);
 
     const resource = {
       values
     }
 
-    var cellNo = index+2 ;
-    var cell = 'C'+cellNo;
-    var range = 'asd!'+cell+':C';
+    var cellNo = index + 2;
+    var cell = 'C' + cellNo;
+    var range = 'asd!' + cell + ':C';
 
     console.log(range)
 
@@ -106,5 +84,48 @@ app.listen(port, async () => {
 
 
 });
+
+let previousUrl = '';
+let previousPrice = 0;
+
+async function callforPrice(url) {
+
+  let finalprice = 0;
+ 
+
+
+  if (previousUrl==url) {
+    console.log("Same URL So Same Price");
+  } else {
+    console.log("Calling Price For -- > " + url);
+    browser = await puppeteer.launch({
+      executablePath: 'C:\\Users\\ashir.muhammad\\AppData\\Local\\Google\\Chrome SxS\\Application\\chrome.exe',
+      headless: true,
+      args: ['--user-data-dir=C:\\Users\\ashir.muhammad\\AppData\\Local\\Google\\Chrome SxS\\User Data',
+      ]
+
+    });
+    const [page] = await browser.pages();
+    try {
+      await page.goto(url, { waitUntil: "domcontentloaded" });
+      const el = await page.$("#twister-plus-price-data-price");
+      previousPrice = await el.evaluate(el => el.getAttribute("value"));
+    } catch (e) {
+      console.log(e);
+    }
+    browser.close();
+    console.log("Price Found -- > " + previousPrice);
+  }
+
+
+  previousUrl = url;
+  finalprice = previousPrice;
+  return finalprice;
+}
+
+
+
+
+
 
 
