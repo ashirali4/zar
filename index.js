@@ -27,6 +27,8 @@ const spreadsheetId = "1YkNRbclpT9H4DSfZHEHiJkMoSrAsAgpT9XBTFfgq9k8";
 
 const port = 3000;
 
+const workSheetName = 'Worksheet'
+
 
 app.listen(port, async () => {
   console.log(`server started on ${port}`)
@@ -35,7 +37,7 @@ app.listen(port, async () => {
   const readData = await googleSheetsInstance.spreadsheets.values.get({
     auth, //auth object
     spreadsheetId, // spreadsheet id
-    range: "asd!B2:B",
+    range: workSheetName+"!M2:M",
   })
 
 
@@ -65,8 +67,8 @@ app.listen(port, async () => {
     }
 
     var cellNo = index + 2;
-    var cell = 'C' + cellNo;
-    var range = 'asd!' + cell + ':C';
+    var cell = 'N' + cellNo;
+    var range = workSheetName+'!' + cell + ':N';
 
     console.log(range)
 
