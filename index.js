@@ -7,7 +7,10 @@ let browser;
 
 async function callforPrice(url) {
   console.log("Calling Price For -- > " + url);
-  browser = await puppeteer.launch({ headless: true });
+  browser = await puppeteer.launch({ headless: false,
+    executablePath: '/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome',
+    userDataDir: 'Users/macbookpro/Library/Application Support/Google/Chrome/Ashir',
+  });
   const [page] = await browser.pages();
   await page.goto(url, { waitUntil: "domcontentloaded" });
   const el = await page.$("#twister-plus-price-data-price");
@@ -50,7 +53,7 @@ app.listen(port, async () => {
   const readData = await googleSheetsInstance.spreadsheets.values.get({
     auth, //auth object
     spreadsheetId, // spreadsheet id
-    range: "Worksheet!B2:B",
+    range: "asd!B2:B",
   })
 
   
@@ -70,7 +73,7 @@ app.listen(port, async () => {
 
   async function myFunction(value,index) {
   
-    var prices = await callforPrice('https://www.amazon.com/dp/' + value.toString());
+    var prices = await callforPrice('https://www.amazon.de/dp/' + value.toString());
     console.log(prices);
     let values = [
 
@@ -85,7 +88,7 @@ app.listen(port, async () => {
 
     var cellNo = index+2 ;
     var cell = 'C'+cellNo;
-    var range = 'Worksheet!'+cell+':C';
+    var range = 'asd!'+cell+':C';
 
     console.log(range)
 
